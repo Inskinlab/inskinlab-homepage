@@ -28,6 +28,7 @@ const teamCollection = defineCollection({
       alt: z.string(),
     }),
     publishDate: z.string().transform(str => new Date(str)),
+    order: z.number().default(99),
   }),
 });
 

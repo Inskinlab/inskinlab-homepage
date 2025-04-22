@@ -8,25 +8,25 @@ import Sectionhead from "@/components/sectionhead.astro";
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
-});
+}).then(members => members.sort((a, b) => a.data.order - b.data.order));
 ---
 
 <Layout title="About">
   <Container>
     <Sectionhead>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc">InSkin Lab Team Members</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        We are "Intelligence Skin Lab"
       </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
+      <!-- <p class="text-lg leading-relaxed text-slate-500">
         We're a multi-cultural team from around the world! We come from diverse
         backgrounds, bringing different personalities, experiences and skills to
         the job. This is what makes our team so special.
-      </p>
+      </p> -->
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
