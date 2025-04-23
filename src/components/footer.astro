@@ -1,19 +1,33 @@
+---
+import Container from "@/components/container.astro";
+---
+
 <footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} InSkin Lab. All rights reserved.
-  </p>
-  <!--
-    Can we ask you a favor 🙏
-    Please keep this backlink on your website if possible.
-    or Purchase a commercial license from https://web3templates.com
-  -->
-  <p class="text-center text-xs text-slate-500 mt-1">
-    Made by <a
-      href="https://web3templates.com"
-      target="_blank"
-      rel="noopener"
-      class="hover:underline">
-      Web3Templates
-    </a>
-  </p>
+  <Container>
+    <p class="text-sm text-slate-500 whitespace-pre-line">
+      <strong>(주) 인스킨랩</strong>
+      <br />
+      <strong>대표</strong> 조수익
+      <strong>사업자등록번호</strong> 391-88-03269
+      <strong>주소</strong> 서울특별시 강남구 테헤란로70길 12, 402-339에이호(대치동)
+      <strong>고객센터</strong> customer@inskinlab.com
+      <strong>호스팅사업자</strong> Amazon Web Services (AWS)
+
+      Copyright © {new Date().getFullYear()} InSkin Lab. All rights reserved.
+    </p>
+    <!--
+      Can we ask you a favor 🙏
+      Please keep this backlink on your website if possible.
+      or Purchase a commercial license from https://web3templates.com
+    -->
+    <p class="text-xs text-slate-500 mt-1">
+      Made by <a
+        href="https://web3templates.com"
+        target="_blank"
+        rel="noopener"
+        class="hover:underline">
+        Web3Templates
+      </a>
+    </p>
+  </Container>
 </footer>
