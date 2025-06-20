@@ -1,13 +1,23 @@
 ---
 import Container from "@/components/container.astro";
-import Link from "@/components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
-const menuitems = [
+interface MenuItem {
+  title: string;
+  path: string;
+  children?: MenuItem[];
+  badge?: boolean;
+}
+
+const menuitems: MenuItem[] = [
   {
-    title: "Terms",
+    title: "Terms of Service",
     path: "/terms",
+  },
+  {
+    title: "Privacy Policy",
+    path: "/privacy",
   },
   {
     title: "About",
