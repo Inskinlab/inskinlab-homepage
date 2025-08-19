@@ -1,12 +1,11 @@
-[
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "kr.co.inskinview",
-      "sha256_cert_fingerprints": [
-        "YOUR_SHA256_CERT_FINGERPRINT_HERE" 
-      ]
-    }
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "55F5V6TDQ3.kr.co.inskinview",
+        "paths": ["*"]
+      }
+    ]
   }
-]
+}
