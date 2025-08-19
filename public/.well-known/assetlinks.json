@@ -1,11 +1,12 @@
-{
-  "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "55F5V6TDQ3.kr.co.inskinview",
-        "paths": ["*"]
-      }
-    ]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.co.inskinview",
+      "sha256_cert_fingerprints": [
+        "SHA256: A0:C3:52:B3:30:B9:E7:81:15:84:41:D3:EC:8E:10:48:70:93:DE:5A:03:10:7F:5C:E0:93:0C:3D:DB:2A:17:08" 
+      ]
+    }
   }
-}
+]
