@@ -1,24 +1,25 @@
 ---
 ---
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>INSKINVIEW 앱으로 이동</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSKINVIEW 앱 설치</title>
     <script type="text/javascript">
-        window.onload = function() {
+        // 이 페이지가 로드되었다는 것은 앱이 설치되지 않았다는 의미입니다.
+        // 사용자의 OS를 확인하여 즉시 해당 앱 스토어로 리디렉션합니다.
+        (function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             // iOS 또는 Mac 기기 감지
             if (/iPad|iPhone|iPod|Macintosh/i.test(userAgent) && !window.MSStream) {
-                window.location.href = "https://apps.apple.com/app/id6747983661";
+                window.location.replace("https://apps.apple.com/app/id6747983661");
                 return;
             }
 
             // 안드로이드 또는 기타 기기인 경우 Play Store로 리디렉션
-            window.location.href = "https://play.google.com/store/apps/details?id=kr.co.inskinview";
-        };
+            window.location.replace("https://play.google.com/store/apps/details?id=kr.co.inskinview");
+        })();
     </script>
 </head>
 <body>

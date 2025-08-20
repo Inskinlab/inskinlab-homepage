@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "55F5V6TDQ3.kr.co.inskinview",
-        "paths": ["*"]
+        "paths": ["/app", "/app/*"]
       }
     ]
   }
