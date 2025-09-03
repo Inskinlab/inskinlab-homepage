@@ -1,57 +1,43 @@
 ---
-import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
-
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-}).then(members => members.sort((a, b) => a.data.order - b.data.order));
+import { Image } from "astro:assets";
+// You will need to add an image named `about-image.png` to the `src/assets` folder.
+import aboutImage from "../assets/about-image.png";
 ---
 
 <Layout title="About">
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">InSkin Lab Team Members</Fragment>
-    </Sectionhead>
-
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        We are "Intelligence Skin Lab"
-      </h2>
-      <!-- <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
-      </p> -->
+    <div class="mt-24">
+      <Sectionhead>
+        <div slot="title">인스킨랩</div>
+        <div slot="desc"></div>
+      </Sectionhead>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                class="w-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-              />
-            </div>
 
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
+    <div class="max-w-4xl mx-auto mt-12">
+      <div class="max-w-2xl mx-auto">
+        <Image 
+          src={aboutImage}
+          alt="InSkin Lab"
+          class="w-full rounded-lg"
+        />
+      </div>
+      <div class="mt-8 text-lg space-y-6 leading-relaxed text-center">
+        <p>
+          인스킨랩은 AI 기반 디지털 트랜스포메이션으로<br />피부미용시장의 혁신을 선도하는 스타트업입니다.
+        </p>
+        <p>
+          피부와 AI 분야의 전문성을 바탕으로,<br />의료와 뷰티 산업 전반에서 활용 가능한<br />개인 맞춤형 AI 서비스를 제공합니다.
+        </p>
+        <p>
+          대학병원과 의료 AI 기업에서 축적한<br />알고리즘 개발 경험을 토대로,<br />피부를 정밀하게 분석하는 자체 AI 모델을 개발하고 있습니다.
+        </p>
+        <p>
+          앞으로 지속적인 연구·개발을 통해<br />K-뷰티 산업의 글로벌 혁신을 이끌어가겠습니다.
+        </p>
+      </div>
     </div>
   </Container>
 </Layout>

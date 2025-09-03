@@ -1,11 +1,11 @@
 ---
+name: "정문석"
+title: "CTO"
+description: "백엔드 개발자"
+avatar:
+  src: "/moonsukjung.png"
+  alt: "정문석"
 draft: false
-name: "Moonsuk Jung"
-title: "co-Founder"
-avatar: {
-    src: "/moonsukjung.png",
-    alt: "Moonsuk Jung"
-}
-publishDate: "2025-04-15 02:00"
-order: 3
+publishDate: "2024-07-29"
+order: 2
 ---

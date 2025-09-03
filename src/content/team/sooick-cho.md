@@ -1,11 +1,12 @@
 ---
 draft: false
-name: "Sooick Cho"
+name: "조수익"
 title: "CEO"
+description: "피부과 전문의"
 avatar: {
     src: "/sooickcho.png",
-    alt: "Sooick Cho"
+    alt: "조수익"
 }
-publishDate: "2025-04-15 00:00"
+publishDate: "2024-07-29"
 order: 1
 ---

@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import Container from "@/components/container.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
@@ -10,18 +11,18 @@ interface MenuItem {
   badge?: boolean;
 }
 
-const menuitems: MenuItem[] = [
+const navitems: MenuItem[] = [
   {
-    title: "Terms of Service",
-    path: "/terms",
-  },
-  {
-    title: "Privacy Policy",
-    path: "/privacy",
+    title: "Product",
+    path: "/",
   },
   {
     title: "About",
     path: "/about",
+  },
+  {
+    title: "Team",
+    path: "/team",
   },
   {
     title: "Contact",
@@ -30,49 +31,57 @@ const menuitems: MenuItem[] = [
 ];
 ---
 
-<Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
-    <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">InSkin Lab</span>
-        </a>
-        <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
-        </div>
-      </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
+<header class="absolute inset-x-0 top-0 z-50 py-4 lg:py-6">
+  <Container>
+    <nav class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <!-- <Icon name="logo" class="h-8 w-auto" /> -->
+        <span class="text-lg font-bold text-black">InSkin Lab</span>
+      </a>
 
-                {!item.children && (
+      <!-- Desktop Menu -->
+      <ul class="hidden lg:flex items-center gap-3">
+        {
+          navitems.map((item) => (
+            <li>
+              <a
+                href={item.path}
+                class="px-3 py-2 text-gray-800 hover:text-black hover:font-bold"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Mobile Menu -->
+      <div class="lg:hidden">
+        <Astronav>
+          <div class="flex items-center justify-between">
+            <div class="block lg:hidden">
+              <MenuIcon class="w-4 h-4 text-gray-800" />
+            </div>
+          </div>
+          <MenuItems class="absolute top-16 left-0 right-0 z-50 w-full bg-white shadow-lg lg:w-auto mt-2 lg:flex lg:mt-0">
+            <ul class="flex flex-col lg:flex-row lg:gap-3 p-4">
+              {
+                navitems.map((item) => (
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
-                      <span> {item.title}</span>
-                      {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                          New
-                        </span>
-                      )}
+                      class="flex w-full px-3 py-2 items-center text-gray-800 hover:text-black hover:font-bold"
+                    >
+                      {item.title}
                     </a>
                   </li>
-                )}
-              </>
-            ))
-          }
-        </ul>
-      </MenuItems>
-    </Astronav>
-  </header>
-</Container>
+                ))
+              }
+            </ul>
+          </MenuItems>
+        </Astronav>
+      </div>
+    </nav>
+  </Container>
+</header>

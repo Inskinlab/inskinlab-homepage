@@ -1,33 +1,74 @@
 ---
-import Container from "@/components/container.astro";
+import { Image } from "astro:assets";
+import qrCodeImage from "../assets/qr-code.png";
+const { removeMargin = false } = Astro.props;
 ---
 
-<footer class="my-20">
-  <Container>
-    <p class="text-sm text-slate-500 whitespace-pre-line">
-      <strong>(주) 인스킨랩</strong>
-      <br />
-      <strong>대표</strong> 조수익
-      <strong>사업자등록번호</strong> 391-88-03269
-      <strong>주소</strong> 서울특별시 강남구 테헤란로70길 12, 402-339에이호(대치동)
-      <strong>고객센터</strong> customer@inskinlab.com
-      <strong>호스팅사업자</strong> Amazon Web Services (AWS)
+<footer class:list={["bg-gray-100 py-12", !removeMargin && "mt-24"]}>
+  <div class="mx-auto w-full max-w-7xl px-8">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <!-- Left Side -->
+      <div class="text-sm">
+        <p class="font-bold text-base text-gray-900 mb-4">
+          (주)인스킨랩
+        </p>
+        <div
+          class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1 text-gray-600"
+        >
+          <span class="text-gray-800">대표</span><span>조수익</span
+          >
+          <span class="text-gray-800">사업자등록번호</span
+          ><span>391-88-03269</span>
+          <span class="text-gray-800">주소</span
+          ><span
+            >서울특별시 강남구 테헤란로70길 12, 402-339 에이치호(대치동)</span
+          >
+          <span class="text-gray-800">고객센터</span
+          ><span>customer@inskinlab.com</span>
+          <span class="text-gray-800">호스팅사업자</span
+          ><span>Amazon Web Services (AWS)</span>
+        </div>
+      </div>
 
-      Copyright © {new Date().getFullYear()} InSkin Lab. All rights reserved.
-    </p>
-    <!--
-      Can we ask you a favor 🙏
-      Please keep this backlink on your website if possible.
-      or Purchase a commercial license from https://web3templates.com
-    -->
-    <p class="text-xs text-slate-500 mt-1">
-      Made by <a
-        href="https://web3templates.com"
-        target="_blank"
-        rel="noopener"
-        class="hover:underline">
-        Web3Templates
-      </a>
-    </p>
-  </Container>
+      <!-- Right Side -->
+      <div class="flex flex-col sm:flex-row gap-8">
+        <!-- QR Code Block -->
+        <div class="flex items-start gap-4">
+          <Image
+            src={qrCodeImage}
+            alt="QR Code for app download"
+            class="h-20 w-20 flex-shrink-0"
+          />
+          <p class="text-sm text-gray-800">
+            지금 바로 앱을<br />
+            다운로드 받아보세요
+          </p>
+        </div>
+
+        <!-- Links & Copyright Block -->
+        <div class="text-sm sm:text-right flex flex-col">
+          <div>
+            <p>
+              <a
+                href="/terms"
+                class="font-bold text-gray-800 hover:underline"
+                >서비스 이용약관</a
+              >
+            </p>
+            <p class="mt-1">
+              <a
+                href="/privacy"
+                class="font-bold text-gray-800 hover:underline"
+                >개인정보 처리방침</a
+              >
+            </p>
+          </div>
+
+          <p class="mt-auto text-gray-500">
+            Copyright © 2025 InSkin Lab. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
