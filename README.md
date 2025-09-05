@@ -1,166 +1,95 @@
-# Astroship - Astro SAAS Starter Website Template
+# 인스킨랩 홈페이지
 
-Astroship is a free starter astro website template for saas, startups, marketing websites, landing pages & blogs. Built with Astro & TailwindCSS.
+인공지능 기술을 바탕으로 내 피부에 꼭 맞는 시술과 화장품을 추천해주는 스마트 피부 솔루션 **인스킨랩(InSkin Lab)**의 공식 홈페이지입니다.
 
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
+## 🚀 기술 스택
 
-## Live Demo
+- **[Astro 5.x](https://astro.build)** - 정적 사이트 생성기
+- **[TailwindCSS 4.x](https://tailwindcss.com)** - 유틸리티 우선 CSS 프레임워크
+- **[TypeScript](https://www.typescriptlang.org/)** - 타입 안전성
+- **[MDX](https://mdxjs.com/)** - 마크다운 + JSX
+- **[Sharp](https://sharp.pixelplumbing.com/)** - 이미지 최적화
 
-**[https://astroship.web3templates.com/](https://astroship.web3templates.com/)**
+## 🛠️ 개발 환경 설정
 
-**[Download Astroship Template](https://web3templates.com/templates/astroship-starter-website-template-for-astro)**
+### 필수 조건
+- Node.js 18+ 
+- pnpm (권장 패키지 매니저)
 
-## Upgrade to Astroship Pro Version
-
-**[https://astroship-pro.web3templates.com/](https://astroship-pro.web3templates.com/)**
-
-**[Purchase Astroship Pro — $49](https://web3templates.com/templates/astroship-pro-astro-saas-website-template)**
-
-
-<!-- prettier-ignore -->
-| Feature | Free Version | Pro Version |
-| --- | ------ | --- |
-| Astro v3 | ✅  | ✅ |
-| Content Collections | ✅  | ✅ |
-| Tailwind CSS   | ✅  | ✅ |
-| Mobile Responsive | ✅  | ✅ |
-| Working Contact Page | ✅  | ✅ |
-| Pro Layouts & Features | ❌  | ✅ |
-| Blog with Pagination | ❌ | ✅ |
-| View Transitions | ❌ | ✅ |
-| Advanced Homepage Design | ❌  | ✅ |
-| Features Page | ❌  | ✅ |
-| Integrations Page | ❌  | ✅ |
-| Elegant 404 Page | ❌  | ✅ |
-| 6 Months Support| ❌  | ✅  |
-| Free Updates    | ✅  | ✅  |
-| License         | GPL-2.0 | Commercial |
-| &nbsp; | &nbsp;| &nbsp;|
-| Pricing| Free|**$49**|
-| &nbsp; | [Deploy for free](https://vercel.com/new/surjithctly/clone?demo-description=Starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20blogs%20built%20with%20Astro%20and%20TailwindCSS.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F5dB0dDqBr1BfvIoNOmffVB%2F784984a8d3fe5e3db123e7c655166046%2Fastroship_-_Tony_Sullivan.jpg&demo-title=Astroship&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&from=templates&project-name=Astroship&repository-name=astroship&repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&skippable-integrations=1) | [Purchase Pro](https://web3templates.com/templates/astroship-pro-astro-saas-website-template) |
-
-<a href="https://web3templates.com/templates/astroship-pro-astro-saas-website-template">
-<img width="160" alt="Upgrade to Pro" src="https://user-images.githubusercontent.com/1884712/199181300-37c2128e-d033-4145-a906-16fa5263a53b.png">
-</a>
-
-## Deploy this template
-
-You can instantly clone this to your GitHub and deploy the site by clicking the below buttons to deploy to your chosen providers!
-
-Click here to deploy on Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&project-name=astroship&repository-name=astroship&demo-title=Astroship%20-%20Astro%20Starter%20Template&demo-description=Astroship%20is%20a%20starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20landing%20pages.%20Built%20with%20Astro%2C%20TailwindCSS&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F1884712%2F200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-Click here to deploy on Netlify:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/astroship)
-
-## Preview
-
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-
-## Pro Version Preview
-
-![preview](https://github.com/surjithctly/astroship/assets/1884712/25665c02-d2a7-43dc-89b2-34a8ae37ade9)
-
-
-### Pagespeed Score
-
-[![pagespeed](https://user-images.githubusercontent.com/1884712/210250214-7aa98167-7993-4b90-8138-326b8fa0c223.png)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fastroship.web3templates.com%2F)
-
-
-## Installation
-
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
-
-Alternatively, you can clone the project directly from this repo to your local system.
-
-### 1. Clone the repo
+### 설치 및 실행
 
 ```bash
-git clone https://github.com/surjithctly/astroship.git myProjectName
-# or
-git clone https://github.com/surjithctly/astroship.git .
-```
-
-The `.` will clone it to the current directory so make sure you are inside your project folder first.
-
-### 2. Install Dependencies
-
-```bash
-npm install
-# or
-yarn install
-# or (recommended)
+# 의존성 설치
 pnpm install
-```
 
-### 3. Start development Server
-
-```bash
-npm run dev
-# or
-yarn dev
-# or (recommended)
+# 개발 서버 실행
 pnpm dev
-```
 
-### Preview & Build
-
-```bash
-npm run preview
-npm run build
-# or
-yarn preview
-yarn build
-# or (recommended)
-pnpm preview
+# 프로덕션 빌드
 pnpm build
+
+# 빌드 미리보기
+pnpm preview
 ```
 
-We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
-
-### Other Commands
-
-```bash
-pnpm astro ...
-pnpm astro add
-pnpm astro --help
-```
-
-## Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 프로젝트 구조
 
 ```
-/
-├── public/
+src/
+├── components/          # 재사용 가능한 UI 컴포넌트
+│   ├── ui/             # 기본 UI 요소들 (버튼, 링크 등)
+│   ├── navbar/         # 네비게이션 컴포넌트
 │   └── ...
-├── src/
-│   ├── components/
-│   │   └── ...
-│   ├── layouts/
-│   │   └── ...
-│   └── pages/
-│       └── ...
-└── package.json
+├── layouts/            # 페이지 레이아웃 템플릿
+├── pages/              # 페이지 파일들 (파일 기반 라우팅)
+├── content/            # 콘텐츠 컬렉션 (블로그, 팀)
+├── assets/             # 이미지 및 정적 자산
+└── utils/              # 유틸리티 함수들
+
+public/                 # 정적 파일들
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎯 주요 기능
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **반응형 디자인** - 모든 디바이스에서 최적화된 UI
+- **SEO 최적화** - astro-seo를 통한 메타 태그 관리
+- **딥링크 지원** - 인스킨랩 모바일 앱 연동
+- **컨텐츠 관리** - Astro Content Collections 활용
+- **Google Analytics** - 사용자 분석 추적
+- **이미지 최적화** - Sharp를 통한 자동 이미지 최적화
 
-## TailwindCSS
+## 🔗 딥링크 기능
 
-TailwindCSS is already configured in this repo, so you can start using it without any installation.
+인스킨랩 모바일 앱과 연동된 딥링크 기능을 지원합니다:
+- 앱 설치 링크
+- 특정 페이지로 직접 이동
 
-## Credits
+## 🌐 배포
 
-[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
+- **사이트 URL**: https://inskinlab.com
+- **빌드 타입**: 정적 사이트 (Static)
+- **호스팅**: Vercel/Netlify 등 정적 호스팅 서비스 권장
 
-## 👀 Want to learn more?
+## 🧪 개발 가이드
 
-Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
+### 새 페이지 추가
+`src/pages/` 디렉토리에 `.astro` 파일을 추가하면 자동으로 라우팅됩니다.
+
+### 컴포넌트 작성
+TypeScript와 Astro 문법을 사용하여 재사용 가능한 컴포넌트를 작성할 수 있습니다.
+
+### 콘텐츠 추가
+`src/content/` 디렉토리에서 블로그 포스트나 팀 멤버 정보를 관리할 수 있습니다.
+
+### 스타일링
+TailwindCSS 클래스를 사용하여 스타일을 적용하거나, 글로벌 CSS는 `src/styles/` 디렉토리에서 관리합니다.
+
+## 📝 라이선스
+
+이 프로젝트는 인스킨랩의 소유입니다.
+
+---
+
+**Built with ❤️ by InSkin Lab Team**
 
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
