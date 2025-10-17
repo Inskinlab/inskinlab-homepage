@@ -57,15 +57,15 @@ const navitems: MenuItem[] = [
       </ul>
 
       <!-- Mobile Menu -->
-      <div class="lg:hidden">
+      <div class="lg:hidden mobile-menu-wrapper">
         <Astronav>
           <div class="flex items-center justify-between">
-            <div class="block lg:hidden">
+            <div class="block lg:hidden mobile-menu-icon-wrapper">
               <MenuIcon class="w-4 h-4 text-gray-800" />
             </div>
           </div>
           <MenuItems class="hidden absolute top-16 left-0 right-0 z-50 w-full bg-white shadow-lg lg:w-auto mt-2 lg:flex lg:mt-0">
-            <ul class="flex flex-col lg:flex-row lg:gap-3 p-4">
+            <ul class="flex flex-col lg:flex-row lg:gap-3 p-4 mobile-menu-items-list">
               {
                 navitems.map((item) => (
                   <li>
@@ -85,3 +85,89 @@ const navitems: MenuItem[] = [
     </nav>
   </Container>
 </header>
+
+<script>
+  let isNavbarListenerInitialized = false;
+
+  function initNavbarListener() {
+    if (isNavbarListenerInitialized) {
+      return;
+    }
+
+    const MAX_RETRIES = 10;
+    let retryCount = 0;
+
+    function findElementsAndAttachListeners() {
+      const menuWrapper = document.querySelector(".mobile-menu-wrapper");
+      const iconWrapper = document.querySelector(".mobile-menu-icon-wrapper");
+      const menuItemsList = document.querySelector(".mobile-menu-items-list");
+      const menuItemsContainer = menuItemsList
+        ? menuItemsList.parentElement
+        : null;
+      const iconSvg = iconWrapper ? iconWrapper.querySelector("svg") : null;
+
+      if (menuWrapper && iconWrapper && menuItemsContainer && iconSvg) {
+        attachListeners(menuWrapper, iconSvg, menuItemsContainer);
+        isNavbarListenerInitialized = true;
+      } else {
+        retryCount++;
+        if (retryCount < MAX_RETRIES) {
+          setTimeout(findElementsAndAttachListeners, 150);
+        }
+      }
+    }
+
+    function attachListeners(menuWrapper, iconClickTarget, menuItemsContainer) {
+      function simulateClick(element) {
+        if (!element) return;
+        const mousedownEvent = new MouseEvent("mousedown", {
+          bubbles: true,
+          cancelable: true,
+        });
+        element.dispatchEvent(mousedownEvent);
+        const mouseupEvent = new MouseEvent("mouseup", {
+          bubbles: true,
+          cancelable: true,
+        });
+        element.dispatchEvent(mouseupEvent);
+        const clickEvent = new MouseEvent("click", {
+          bubbles: true,
+          cancelable: true,
+        });
+        element.dispatchEvent(clickEvent);
+      }
+
+      const handleOutsideClick = (event) => {
+        const isMenuOpen = !menuItemsContainer.classList.contains("hidden");
+        if (!isMenuOpen) {
+          return;
+        }
+
+        const isClickInside = menuWrapper.contains(event.target);
+        if (!isClickInside) {
+          simulateClick(iconClickTarget);
+        }
+      };
+
+      document.addEventListener("click", handleOutsideClick, true);
+
+      document.addEventListener(
+        "astro:before-swap",
+        () => {
+          document.removeEventListener("click", handleOutsideClick, true);
+          isNavbarListenerInitialized = false;
+        },
+        { once: true },
+      );
+    }
+
+    findElementsAndAttachListeners();
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    isNavbarListenerInitialized = false;
+    initNavbarListener();
+  });
+
+  document.addEventListener("DOMContentLoaded", () => initNavbarListener());
+</script>
