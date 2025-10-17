@@ -1,11 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "kr.co.inskinview",
       "sha256_cert_fingerprints": [
-        "SHA256: A0:C3:52:B3:30:B9:E7:81:15:84:41:D3:EC:8E:10:48:70:93:DE:5A:03:10:7F:5C:E0:93:0C:3D:DB:2A:17:08" 
+        "A0:C3:52:B3:30:B9:E7:81:15:84:41:D3:EC:8E:10:48:70:93:DE:5A:03:10:7F:5C:E0:93:0C:3D:DB:2A:17:08",
+        "54:75:52:A1:F4:79:8C:5C:0B:AF:E7:00:3E:FA:2F:70:4E:16:AF:7A:65:22:20:E7:CD:7A:68:0B:41:5C:06:70"
       ]
     }
   }

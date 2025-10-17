@@ -88,6 +88,8 @@ TailwindCSS 클래스를 사용하여 스타일을 적용하거나, 글로벌 CS
 
 이 프로젝트는 인스킨랩의 소유입니다.
 
+## 📖 [Changelog](./CHANGELOG.md)
+
 ---
 
 **Built with ❤️ by InSkin Lab Team**
